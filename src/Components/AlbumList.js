@@ -1,4 +1,5 @@
 import React, { useState, useEffect} from "react";
+import Album from "./Album"
 
 function AlbumList(){
     const [albums, setAlbums] = useState([])
@@ -10,16 +11,12 @@ function AlbumList(){
     }, [])
 
     return (
-        <div>
+        <div className="ui cards">
             <h1>Album List</h1>
             <ul>{albums.map((album) => {
                 return <Album 
                 key={album.id}
-                album={album.album}
-                artist={album.artist}
-                image={album.image}
-                runtime={album.runtime}
-                genres={genres} />
+                music={album}/>
                 })}
             </ul>
         </div>
