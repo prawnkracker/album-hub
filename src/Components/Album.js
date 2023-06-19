@@ -10,6 +10,7 @@ function Album({ music }){
             <p>{artist}</p>
             <p>{runtime}</p>
             <div>{genres.map((genre) => <span key={genre}>{genre} </span>)}</div>
+            <button className="favorites">Add to Favorites ♡ </button>
         </div>
     )
 }
