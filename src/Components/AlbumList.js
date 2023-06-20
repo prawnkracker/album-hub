@@ -16,14 +16,20 @@ function AlbumList(){
         setFilter(event.target.value)
     }
     
-    console.log(filter)
+    const albumsToDisplay = albums.filter((album) => {
+        if (filter === '') return true;
+
+        return (
+            album.genre.toLowerCase().includes(filter.toLowerCase())
+        )
+    })
     
 
     return (
         <div className="ui cards">
             <h1>Album List</h1>
             <GenreFilter filter={filter} onFilterChange={onFilterChange}/>
-            <ul>{albums.map((album) => {
+            <ul>{albumsToDisplay.map((album) => {
                 return <Album 
                 key={album.id}
                 music={album}/>
