@@ -1,7 +1,7 @@
 import React from "react";
 
 function Album({ music }){
-    const {album, artist, image, runtime, genres} = music
+    const {album, artist, image, runtime, genre} = music
 
     return (
         <div>
@@ -9,7 +9,7 @@ function Album({ music }){
             <img src={image} />
             <p>{artist}</p>
             <p>{runtime}</p>
-            <div>{genres.map((genre) => <span key={genre}>{genre} </span>)}</div>
+            <p>{genre}</p>
             <button className="favorites">Add to Favorites ♡ </button>
         </div>
     )
