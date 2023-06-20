@@ -15,6 +15,11 @@ function NavBar(){
             exact>
             Album List
             </NavLink>
+            <NavLink 
+            to='/newalbum'
+            exact>
+            New Album
+            </NavLink>
         </div>
     )
 }
