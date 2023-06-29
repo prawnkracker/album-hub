@@ -34,6 +34,13 @@ function NewAlbumForm({ onAddAlbum }){
         })
         .then((r) => r.json())
         .then((newAlbum) => onAddAlbum(newAlbum))
+        setFormData({
+            album: '',
+            image: '',
+            artist: '',
+            runtime: '',
+            genre: '',
+        })
     }
     return (
         <div className="form">
