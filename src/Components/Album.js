@@ -17,9 +17,10 @@ function Album({ music, onFavoriteClick }){
             body: JSON.stringify(updatedAlbum)
         })
         .then((r) => r.json())
-        .then((data) => setFavorited(data.isFavorite))
-        
-        onFavoriteClick(music)
+        .then((data) => {
+            setFavorited(data.isFavorite)
+            onFavoriteClick(data)
+        })
     }
 
     return (
