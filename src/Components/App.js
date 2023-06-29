@@ -8,12 +8,8 @@ import NewAlbumForm from './NewAlbumForm';
 function App() {
 
   const [albums, setAlbums] = useState([])
-    const [filter, setFilter] = useState('')
-    const [albumName, setAlbumName] = useState('')
-    const [image, setImage] = useState('')
-    const [artist, setArtist] = useState('')
-    const [runtime, setRuntime] = useState('')
-    const [genre, setGenre] = useState('')
+  const [filter, setFilter] = useState('')
+    
 
     useEffect(() => {
         fetch('http://localhost:3000/albums')
@@ -33,6 +29,9 @@ function App() {
         )
     })
 
+    function addAlbum(newAlbum){
+      setAlbums([...albums, newAlbum])
+    }
   return (
     <div className="App">
       <NavBar />
@@ -44,7 +43,7 @@ function App() {
             <AlbumList albumsToDisplay={albumsToDisplay} onFilterChange={onFilterChange} />
         </Route>
         <Route path='/newalbum'>
-            <NewAlbumForm />
+            <NewAlbumForm onAddAlbum={addAlbum}/>
         </Route>
       </Switch>
     </div>
