@@ -7,8 +7,7 @@ function Album({ music, onFavoriteClick }){
     
     function handleFavoriteClick(){
         const updatedAlbum = {...music, isFavorite: !favorited}
-        
-        
+        if (favorited === false){
         fetch(`http://localhost:3000/albums/${music.id}`, {
             method: 'PATCH',
             headers: {
@@ -21,7 +20,7 @@ function Album({ music, onFavoriteClick }){
             setFavorited(data.isFavorite)
             onFavoriteClick(data)
         })
-    }
+    }}
 
     return (
         <div>

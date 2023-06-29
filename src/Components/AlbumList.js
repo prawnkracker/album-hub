@@ -11,7 +11,8 @@ function AlbumList({ albumsToDisplay, onFilterChange, filter, onFavoriteClick })
                 return <Album 
                 key={album.id}
                 music={album}
-                onFavoriteClick={onFavoriteClick}/>
+                onFavoriteClick={onFavoriteClick}
+                />
                 })}
             </ul>
         </div>
