@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Album({ music }){
     const {album, artist, image, runtime, genre} = music
+    const [buttonText, setButtonText] = useState('Add To Favorites ♡')
+
+    function handleFavoriteClick(){
+        if (buttonText === 'Add To Favorites ♡'){
+            setButtonText('Favorited ♥')
+        }
+    }
 
     return (
         <div>
@@ -10,7 +17,7 @@ function Album({ music }){
             <p>{artist}</p>
             <p>{runtime}</p>
             <p>{genre}</p>
-            <button className="favorites">Add to Favorites ♡ </button>
+            <button className="favorites" onClick={handleFavoriteClick}>{buttonText} </button>
         </div>
     )
 }
