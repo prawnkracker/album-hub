@@ -9,6 +9,11 @@ function App() {
 
   const [albums, setAlbums] = useState([])
   const [filter, setFilter] = useState('')
+  const [favorites, setFavorites] = useState([])
+
+  function addAlbumToFavorites(album){
+    console.log(album)
+  }
     
 
     useEffect(() => {
@@ -40,7 +45,7 @@ function App() {
             <Home />
         </Route>
         <Route path='/albumlist'>
-            <AlbumList albumsToDisplay={albumsToDisplay} onFilterChange={onFilterChange} />
+            <AlbumList albumsToDisplay={albumsToDisplay} onFilterChange={onFilterChange} onFavoriteClick={addAlbumToFavorites}/>
         </Route>
         <Route path='/newalbum'>
             <NewAlbumForm onAddAlbum={addAlbum}/>
