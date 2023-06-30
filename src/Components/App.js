@@ -13,9 +13,9 @@ function App() {
   const [favorites, setFavorites] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:3000/albums')
+    fetch('http://localhost:3000/favorites')
     .then((r) => r.json())
-    .then((albums) => setFavorites(albums.filter((album) => album.isFavorite === true)))
+    .then((albums) => setFavorites(albums))
   }, [])
   
   function addAlbumToFavorites(album){
@@ -56,7 +56,7 @@ function App() {
             <Home />
         </Route>
         <Route path='/albumlist'>
-            <AlbumList albumsToDisplay={albumsToDisplay} onFilterChange={onFilterChange} onFavoriteClick={addAlbumToFavorites} onRemoveFromFavorites={removeFromFavorite}/>
+            <AlbumList albumsToDisplay={albumsToDisplay} onFilterChange={onFilterChange} onFavoriteClick={addAlbumToFavorites} onRemoveFromFavorites={removeFromFavorite} favorites={favorites}/>
         </Route>
         <Route path='/newalbum'>
             <NewAlbumForm onAddAlbum={addAlbum}/>

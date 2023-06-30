@@ -1,8 +1,19 @@
 import React from "react";
+import FavoriteCard from "./FavoriteCard"
 
-function Favorites(){
+function Favorites({ favorites }){
     return (
-        <div>Hello </div>
+        <div>
+            <h1>Your Favorite Albums!</h1>
+            {favorites.map((album) => {
+                return (
+                    <FavoriteCard
+                    key={album.id}
+                    album={album}
+                    />
+                ) 
+            })}
+        </div>
     )
 }
 

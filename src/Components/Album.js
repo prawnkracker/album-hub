@@ -1,25 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-function Album({ music, onFavoriteClick, onRemoveFromFavorites }){
-    const {album, artist, image, runtime, genre, isFavorite} = music
-    const [favorited, setFavorited] = useState(isFavorite)
-
+function Album({ music, onFavoriteClick, favorites }){
+    const {album, artist, image, runtime, genre} = music
+    const [favorited, setFavorited] = useState(false)
     
-    function handleFavoriteClick(){
-        const updatedAlbum = {...music, isFavorite: !favorited}  
-            fetch(`http://localhost:3000/albums/${music.id}`, {
-            method: 'PATCH',
-            headers: {
-                'Content-Type' : 'application/json'
-            },
-            body: JSON.stringify(updatedAlbum)
+    useEffect(() => {
+        const isFavorited = favorites.some((fav) => fav.album === album)
+        setFavorited(isFavorited)
+    }, [])
+    function handleFavoriteClick(){ 
+        fetch('http://localhost:3000/favorites', {
+        method: 'POST',
+        headers: {
+            'Content-Type' : 'application/json'
+        },
+        body: JSON.stringify(music)
         })
         .then((r) => r.json())
         .then((data) => {
-            setFavorited(data.isFavorite)
-            if (data.isFavorite){
             onFavoriteClick(data)
-        } else {onRemoveFromFavorites(data.id)}
+            setFavorited(true)
         })
     }
 

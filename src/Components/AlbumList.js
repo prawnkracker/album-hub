@@ -2,7 +2,7 @@ import React from "react";
 import Album from "./Album"
 import GenreFilter from "./GenreFilter";
 
-function AlbumList({ albumsToDisplay, onFilterChange, filter, onFavoriteClick, onRemoveFromFavorites }){
+function AlbumList({ albumsToDisplay, onFilterChange, filter, onFavoriteClick, onRemoveFromFavorites, favorites }){
     return (
         <div className="ui cards">
             <h1>Album List</h1>
@@ -13,6 +13,7 @@ function AlbumList({ albumsToDisplay, onFilterChange, filter, onFavoriteClick, o
                 music={album}
                 onFavoriteClick={onFavoriteClick}
                 onRemoveFromFavorites={onRemoveFromFavorites}
+                favorites={favorites}
                 />
                 })}
             </ul>
