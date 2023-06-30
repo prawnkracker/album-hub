@@ -4,6 +4,7 @@ import AlbumList from './AlbumList';
 import { Switch, Route } from "react-router-dom"
 import NavBar from './NavBar';
 import NewAlbumForm from './NewAlbumForm';
+import Favorites from './Favorites'
 
 function App() {
 
@@ -22,10 +23,9 @@ function App() {
   }
 
   function removeFromFavorite(id){
-    const updateFavorites = favorites.filter((album) => album.id !== id)
-    setFavorites(updateFavorites)
+    const updatedFavorites = favorites.filter((album) => album.id !== id)
+    setFavorites(updatedFavorites)
   }
-  console.log(favorites)
 
     useEffect(() => {
         fetch('http://localhost:3000/albums')
@@ -60,6 +60,9 @@ function App() {
         </Route>
         <Route path='/newalbum'>
             <NewAlbumForm onAddAlbum={addAlbum}/>
+        </Route>
+        <Route path='/favorites'>
+          <Favorites favorites={favorites}/>
         </Route>
       </Switch>
     </div>
