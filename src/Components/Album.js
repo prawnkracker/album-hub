@@ -8,6 +8,7 @@ function Album({ music, onFavoriteClick, favorites }){
         const isFavorited = favorites.some((fav) => fav.album === album)
         setFavorited(isFavorited)
     }, [])
+    
     function handleFavoriteClick(){ 
         fetch('http://localhost:3000/favorites', {
         method: 'POST',

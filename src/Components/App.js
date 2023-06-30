@@ -45,6 +45,14 @@ function App() {
         )
     })
 
+    const favoritesToDisplay = favorites.filter((album) => {
+      if (filter === '') return true;
+
+        return (
+            album.genre.toLowerCase().includes(filter.toLowerCase())
+        ) 
+    })
+
     function addAlbum(newAlbum){
       setAlbums([...albums, newAlbum])
     }
@@ -56,13 +64,13 @@ function App() {
             <Home />
         </Route>
         <Route path='/albumlist'>
-            <AlbumList albumsToDisplay={albumsToDisplay} onFilterChange={onFilterChange} onFavoriteClick={addAlbumToFavorites} onRemoveFromFavorites={removeFromFavorite} favorites={favorites}/>
+            <AlbumList albumsToDisplay={albumsToDisplay} onFilterChange={onFilterChange} onFavoriteClick={addAlbumToFavorites}  favorites={favorites}/>
         </Route>
         <Route path='/newalbum'>
             <NewAlbumForm onAddAlbum={addAlbum}/>
         </Route>
         <Route path='/favorites'>
-          <Favorites favorites={favorites}/>
+          <Favorites favorites={favoritesToDisplay} onRemoveFromFavorites={removeFromFavorite} onFilterChange={onFilterChange}/>
         </Route>
       </Switch>
     </div>
