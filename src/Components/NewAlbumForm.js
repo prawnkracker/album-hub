@@ -10,10 +10,32 @@ function NewAlbumForm({ onAddAlbum }){
     })
 
     function handleChange(event){
+        const { name, value } = event.target;
+
+        if (name === "runtime") {
+      // Remove any non-digit characters from the input
+      const formattedValue = value.replace(/\D/g, "");
+
+      // Format the input as hh:mm:ss
+        let formattedRuntime = "";
+        if (formattedValue.length > 0) {
+            formattedRuntime = formattedValue.replace(/(\d{2})(?=\d{2})/, "$1:");
+            if (formattedValue.length > 2) {
+            formattedRuntime = formattedRuntime.replace(
+            /(\d{2})(?=\d{2}$)/,
+            "$1:"
+          );
+        }
+      }
         setFormData({
             ...formData,
+            [name]: formattedRuntime,
+        });
+    } else {
+         setFormData({
+            ...formData,
             [event.target.name]: event.target.value
-        })
+        })}
     }
 
     function handleSubmit(event){
@@ -48,7 +70,7 @@ function NewAlbumForm({ onAddAlbum }){
                 <input type="text" placeholder="Album Name..." name='album' value={formData.album} onChange={handleChange}/>
                 <input type="text" placeholder="Image Url..." name='image' value={formData.image} onChange={handleChange}/>
                 <input type="text" placeholder="Artist Name..." name='artist' value={formData.artist} onChange={handleChange}/>
-                <input type="text" placeholder="Runtime..." name='runtime' value={formData.runtime} onChange={handleChange}/>
+                <input type="text" placeholder="Runtime(hh:mm:ss)" name='runtime' value={formData.runtime} onChange={handleChange}/>
                 <input type="text" placeholder="Genre..." name='genre' value={formData.genre} onChange={handleChange}/>
                 <button type="submit">Add Album!</button>
             </form>
