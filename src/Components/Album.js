@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 
-function Album({ music, onFavoriteClick }){
+function Album({ music, onFavoriteClick, onRemoveFromFavorites }){
     const {album, artist, image, runtime, genre, isFavorite} = music
     const [favorited, setFavorited] = useState(isFavorite)
 
     
     function handleFavoriteClick(){
-        const updatedAlbum = {...music, isFavorite: !favorited}
-        if (favorited === false){
-        fetch(`http://localhost:3000/albums/${music.id}`, {
+        const updatedAlbum = {...music, isFavorite: !favorited}  
+            fetch(`http://localhost:3000/albums/${music.id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type' : 'application/json'
@@ -18,9 +17,11 @@ function Album({ music, onFavoriteClick }){
         .then((r) => r.json())
         .then((data) => {
             setFavorited(data.isFavorite)
+            if (data.isFavorite){
             onFavoriteClick(data)
+        } else {onRemoveFromFavorites(data.id)}
         })
-    }}
+    }
 
     return (
         <div>

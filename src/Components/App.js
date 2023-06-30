@@ -20,6 +20,11 @@ function App() {
   function addAlbumToFavorites(album){
     setFavorites([...favorites, album])
   }
+
+  function removeFromFavorite(id){
+    const updateFavorites = favorites.filter((album) => album.id !== id)
+    setFavorites(updateFavorites)
+  }
   console.log(favorites)
 
     useEffect(() => {
@@ -51,7 +56,7 @@ function App() {
             <Home />
         </Route>
         <Route path='/albumlist'>
-            <AlbumList albumsToDisplay={albumsToDisplay} onFilterChange={onFilterChange} onFavoriteClick={addAlbumToFavorites} />
+            <AlbumList albumsToDisplay={albumsToDisplay} onFilterChange={onFilterChange} onFavoriteClick={addAlbumToFavorites} onRemoveFromFavorites={removeFromFavorite}/>
         </Route>
         <Route path='/newalbum'>
             <NewAlbumForm onAddAlbum={addAlbum}/>
