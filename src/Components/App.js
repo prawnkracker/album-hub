@@ -73,6 +73,7 @@ function App() {
           <Favorites favorites={favoritesToDisplay} onRemoveFromFavorites={removeFromFavorite} onFilterChange={onFilterChange}/>
         </Route>
       </Switch>
+      <NavBar />
     </div>
   );
 }
