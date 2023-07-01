@@ -8,7 +8,7 @@ function Album({ music, onFavoriteClick, favorites }){
         const isFavorited = favorites.some((fav) => fav.album === album)
         setFavorited(isFavorited)
     }, [])
-    
+
     function handleFavoriteClick(){ 
         fetch('http://localhost:3000/favorites', {
         method: 'POST',
@@ -31,7 +31,7 @@ function Album({ music, onFavoriteClick, favorites }){
             <p>{artist}</p>
             <p>{runtime}</p>
             <p>{genre}</p>
-            <button className="favorites" onClick={handleFavoriteClick}>{favorited ? "Favorited ♥" : "Add To Favorites ♡"} </button>
+            <button className="favorites-button" onClick={handleFavoriteClick}>{favorited ? "Favorited ♥" : "Add To Favorites ♡"} </button>
         </div>
     )
 }
