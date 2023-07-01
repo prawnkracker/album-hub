@@ -11,6 +11,7 @@ function App() {
   const [albums, setAlbums] = useState([])
   const [filter, setFilter] = useState('')
   const [favorites, setFavorites] = useState([])
+  const [search, setSearch] = useState('')
 
   useEffect(() => {
     fetch('http://localhost:3000/favorites')
@@ -36,13 +37,18 @@ function App() {
     function onFilterChange(event){
         setFilter(event.target.value)
     }
+
+    function onSearch(event){
+      setSearch(event.target.value)
+    }
     
     const albumsToDisplay = albums.filter((album) => {
-        if (filter === '') return true;
+        if (filter === '' && search === '') return true;
 
         return (
-            album.genre.toLowerCase().includes(filter.toLowerCase())
-        )
+          (filter === '' || album.genre.toLowerCase().includes(filter.toLowerCase())) && 
+          album.album.toLowerCase().includes(search.toLowerCase())
+        );
     })
 
     const favoritesToDisplay = favorites.filter((album) => {
@@ -64,13 +70,13 @@ function App() {
             <Home />
         </Route>
         <Route exact path='/albumlist'>
-            <AlbumList albumsToDisplay={albumsToDisplay} onFilterChange={onFilterChange} onFavoriteClick={addAlbumToFavorites}  favorites={favorites}/>
+            <AlbumList filter={filter} albumsToDisplay={albumsToDisplay} onFilterChange={onFilterChange} onFavoriteClick={addAlbumToFavorites}  favorites={favorites} onSearch={onSearch} search={search}/>
         </Route>
         <Route path='/albumlist/newalbum'>
             <NewAlbumForm onAddAlbum={addAlbum}/>
         </Route>
         <Route path='/favorites'>
-          <Favorites favorites={favoritesToDisplay} onRemoveFromFavorites={removeFromFavorite} onFilterChange={onFilterChange}/>
+          <Favorites filter={filter} favorites={favoritesToDisplay} onRemoveFromFavorites={removeFromFavorite} onFilterChange={onFilterChange} onSearch={onSearch} search={search}/>
         </Route>
       </Switch>
       <NavBar />
