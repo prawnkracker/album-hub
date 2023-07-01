@@ -21,7 +21,7 @@ function NavBar(){
                 Favorites
             </NavLink>
             <NavLink 
-            to='/newalbum'
+            to='/albumlist/newalbum'
             exact>
             New Album
             </NavLink>

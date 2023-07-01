@@ -63,10 +63,10 @@ function App() {
         <Route exact path='/'>
             <Home />
         </Route>
-        <Route path='/albumlist'>
+        <Route exact path='/albumlist'>
             <AlbumList albumsToDisplay={albumsToDisplay} onFilterChange={onFilterChange} onFavoriteClick={addAlbumToFavorites}  favorites={favorites}/>
         </Route>
-        <Route path='/newalbum'>
+        <Route path='/albumlist/newalbum'>
             <NewAlbumForm onAddAlbum={addAlbum}/>
         </Route>
         <Route path='/favorites'>
