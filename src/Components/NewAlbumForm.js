@@ -70,7 +70,7 @@ function NewAlbumForm({ onAddAlbum }){
                 <input type="text" placeholder="Album Name..." name='album' value={formData.album} onChange={handleChange}/>
                 <input type="text" placeholder="Image Url..." name='image' value={formData.image} onChange={handleChange}/>
                 <input type="text" placeholder="Artist Name..." name='artist' value={formData.artist} onChange={handleChange}/>
-                <input type="text" placeholder="Runtime(hh:mm:ss)" name='runtime' value={formData.runtime} onChange={handleChange}/>
+                <input type="text" maxLength='8'placeholder="Runtime(hh:mm:ss)" name='runtime' value={formData.runtime} onChange={handleChange}/>
                 <input type="text" placeholder="Genre..." name='genre' value={formData.genre} onChange={handleChange}/>
                 <button type="submit">Add Album!</button>
             </form>
