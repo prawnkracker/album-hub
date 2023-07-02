@@ -19,11 +19,6 @@ function AlbumList({ filter, albumsToDisplay, onFilterChange, onFavoriteClick, f
                 })}
             </ul>
             <p>Don't see your favorite album? Add it to the list and show it off to the community!</p>
-            <NavLink
-            to='/albumlist/newalbum'
-            exact>
-                Add an album
-            </NavLink>
         </div>
     )
 }
