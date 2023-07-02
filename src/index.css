@@ -67,3 +67,11 @@ input[type=text]:focus {
 .favorites-button:hover, .remove-favorite:hover {
   background-color: rgb(102, 66, 12);
 }
+
+.form{
+  text-align: center;
+  background-color: rgba(133, 62, 4, 0.329);
+  padding: 0 40px 10px;
+  width: 500px;
+  margin: 0 auto;
+}

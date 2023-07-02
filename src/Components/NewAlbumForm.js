@@ -67,11 +67,17 @@ function NewAlbumForm({ onAddAlbum }){
     return (
         <div className="form">
             <form onSubmit={handleSubmit}>
+                <h4>Album Name:</h4>
                 <input type="text" placeholder="Album Name..." name='album' value={formData.album} onChange={handleChange}/>
+                <h4>Image:</h4>
                 <input type="text" placeholder="Image Url..." name='image' value={formData.image} onChange={handleChange}/>
+                <h4>Artist:</h4>
                 <input type="text" placeholder="Artist Name..." name='artist' value={formData.artist} onChange={handleChange}/>
-                <input type="text" maxLength='8'placeholder="Runtime(hh:mm:ss)" name='runtime' value={formData.runtime} onChange={handleChange}/>
+                <h4>Length:</h4>
+                <input type="text" maxLength='8'placeholder="(hh:mm:ss)" name='runtime' value={formData.runtime} onChange={handleChange}/>
+                <h4>Genre:</h4>
                 <input type="text" placeholder="Genre..." name='genre' value={formData.genre} onChange={handleChange}/>
+                <h4>Add it to the list!</h4>
                 <button type="submit">Add Album!</button>
             </form>
         </div>
