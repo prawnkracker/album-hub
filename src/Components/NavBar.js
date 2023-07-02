@@ -7,22 +7,26 @@ function NavBar(){
             <NavLink
             to='/'
             exact
+            className='navlink'
             >
             Home
             </NavLink>
             <NavLink 
             to='/albumlist'
-            exact>
+            exact
+            className='navlink'>
             Album List
             </NavLink>
             <NavLink
             to='/favorites'
-            exact>
+            exact
+            className='navlink'>
                 Favorites
             </NavLink>
             <NavLink 
             to='/albumlist/newalbum'
-            exact>
+            exact
+            className='navlink'>
             New Album
             </NavLink>
             
