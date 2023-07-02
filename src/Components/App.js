@@ -14,7 +14,7 @@ function App() {
   const [search, setSearch] = useState('')
 
   useEffect(() => {
-    fetch('http://localhost:3000/favorites')
+    fetch('https://project-2-json.onrender.com/favorites')
     .then((r) => r.json())
     .then((albums) => setFavorites(albums))
   }, [])
@@ -29,7 +29,7 @@ function App() {
   }
 
     useEffect(() => {
-        fetch('http://localhost:3000/albums')
+        fetch('https://project-2-json.onrender.com/albums')
         .then((r) => r.json())
         .then((data) => setAlbums(data))
     }, [])

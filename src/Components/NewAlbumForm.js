@@ -47,7 +47,7 @@ function NewAlbumForm({ onAddAlbum }){
             runtime: formData.runtime,
             genre: formData.genre
         }
-        fetch('http://localhost:3000/albums', {
+        fetch('https://project-2-json.onrender.com/albums', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

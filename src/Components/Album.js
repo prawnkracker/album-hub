@@ -10,7 +10,7 @@ function Album({ music, onFavoriteClick, favorites }){
     }, [])
 
     function handleFavoriteClick(){ 
-        fetch('http://localhost:3000/favorites', {
+        fetch('https://project-2-json.onrender.com/favorites', {
         method: 'POST',
         headers: {
             'Content-Type' : 'application/json'

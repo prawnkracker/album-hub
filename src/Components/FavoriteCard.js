@@ -4,7 +4,7 @@ function FavoriteCard({ music, onRemoveFromFavorites }){
     const {album, image, artist, runtime, genre} = music
     
     function handleRemoveClick(){
-        fetch(`http://localhost:3000/favorites/${music.id}`, {
+        fetch(`https://project-2-json.onrender.com/favorites/${music.id}`, {
         method: "DELETE"
         })
         .then(onRemoveFromFavorites(music.id))
