@@ -26,4 +26,4 @@ This application uses 4 client side routes in the navigation bar to navigate to 
 
 ## Usage
 
-Install this repository and run npm start.
+Install this repository and run npm start. The JSON server is held up on Render: https://project-2-json.onrender.com
