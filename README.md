@@ -1,70 +1,25 @@
-# Getting Started with Create React App
+# Album Hub (React Phase 2 Project)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+I created this web application to allow users to find new albums from other people in the community and share their own taste of music by adding albums they like as well. 
 
-## Available Scripts
+![](./public/phase-2%20project.png)
 
-In the project directory, you can run:
+## Home Page
 
-### `npm start`
+The home page gives a basic overview of the functionality of the application. With a friendly and recognizable picture. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Album List
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The album list component allows users to see all the albums currently existing on the web application. It also allows them to add any of the albums to their favorites by pressing the "Add to Favorites ♡" button. Additionally, they can filter out albums by a certain genre or search for a specific album.
 
-### `npm test`
+## Favorites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The favorites component allows users to view the albums they added to their favorites. If a user decides they no longer want that album in their favorites, they can click the "Remove From Favorites" button to remove it. The favorites component also has the same search and filter functionality as the album list component. 
 
-### `npm run build`
+## New Album Form 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This form allows users to add albums they would like to see on the album list. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Client Side Routes
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This application uses 4 client side routes in the navigation bar to navigate to each component as the user sees fit. 

@@ -1,7 +1,6 @@
 import React from "react";
 import Album from "./Album"
 import GenreFilter from "./GenreFilter";
-import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 import AlbumSearch from "./AlbumSearch";
 
 function AlbumList({ filter, albumsToDisplay, onFilterChange, onFavoriteClick, favorites, onSearch, search }){
