@@ -25,7 +25,7 @@ function Album({ music, onFavoriteClick, favorites }){
     }
 
     return (
-        <div>
+        <div className="card">
             <h1>{album}</h1>
             <img src={image} alt='Album Cover'/>
             <p>{artist}</p>

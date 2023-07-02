@@ -1,22 +1,23 @@
 import React from "react";
 
-function FavoriteCard({ album, onRemoveFromFavorites }){
-    const {albumName, image, artist, runtime, genre} = album
+function FavoriteCard({ music, onRemoveFromFavorites }){
+    const {album, image, artist, runtime, genre} = music
     
     function handleRemoveClick(){
-        fetch(`http://localhost:3000/favorites/${album.id}`, {
+        fetch(`http://localhost:3000/favorites/${music.id}`, {
         method: "DELETE"
         })
-        .then(onRemoveFromFavorites(album.id))
+        .then(onRemoveFromFavorites(music.id))
     }
+
     return (
-    <div>
-        <h1>{albumName}</h1>
+    <div className="favorite-card">
+        <h1>{album}</h1>
         <img src={image} alt='Album Cover'/>
         <p>{artist}</p>
         <p>{runtime}</p>
         <p>{genre}</p>
-        <button onClick={handleRemoveClick}>Remove From Favorites</button>
+        <button className="remove-favorite" onClick={handleRemoveClick} >Remove From Favorites</button>
     </div>
     )
 }

@@ -35,3 +35,35 @@ code {
 nav a.active{
   background-color: orange;
 }
+
+.navlink:hover{
+  background-color: rgb(31, 12, 102);
+}
+
+.ui-cards, .favorites-container{
+  text-align: center;
+}
+
+.card, .favorite-card{
+  background-color: rgba(133, 62, 4, 0.329);
+  padding: 0 40px 10px;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.card img, .favorite-card img{
+  width: 300px;
+}
+
+input[type=text]:focus {
+  border: none;
+  border-bottom: 2px solid rgb(31, 12, 102);
+}
+
+.favorites-button, .remove-favorite{
+  background-color: blanchedalmond;
+}
+
+.favorites-button:hover, .remove-favorite:hover {
+  background-color: rgb(102, 66, 12);
+}
