@@ -23,3 +23,7 @@ This form allows users to add albums they would like to see on the album list.
 ## Client Side Routes
 
 This application uses 4 client side routes in the navigation bar to navigate to each component as the user sees fit. 
+
+## Usage
+
+Install this repository and run npm start.
