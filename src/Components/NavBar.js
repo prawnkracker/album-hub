@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 function NavBar(){
     return (
-        <div className="navbar">
+        <nav className="navbar">
             <NavLink
             to='/'
             exact
@@ -30,7 +30,7 @@ function NavBar(){
             New Album
             </NavLink>
             
-        </div>
+        </nav>
     )
 }
 
