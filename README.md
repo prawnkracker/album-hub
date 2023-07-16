@@ -26,4 +26,5 @@ This application uses 4 client side routes in the navigation bar to navigate to 
 
 ## Usage
 
-Install this repository and run npm start. The JSON server is held up on Render: https://project-2-json.onrender.com
+Install this repository by first forking it. Then copy the 'ssh' code under the 'Code' dropdown. Run 'git clone' + Space + the copied ssh code in your terminal. 'cd' into the cloned repository and run 'npm install' to install all the dependencies. Then run npm start. The backend JSON server is held up on Render: https://project-2-json.onrender.com
+Link for backend repository: https://github.com/prawnkracker/json-server-template
