@@ -18,14 +18,16 @@ code {
 }
 
 .navbar{
-  text-align:center;
+  position: fixed;
+  top: 20px;
+  right: 20px;
 }
 
 .navlink{
   display: inline-block;
   width: fit-content;
   padding: 5px 5px;
-  margin: 15px 5em;
+  margin: 1em 1em;
   background:rgba(5, 52, 58, 0.644);
   border-radius: 10%;
   text-decoration: none;
@@ -49,6 +51,7 @@ nav a.active{
   padding: 0 40px 10px;
   width: fit-content;
   margin: 0 auto;
+  border-radius: 15px;
 }
 
 .card img, .favorite-card img{
